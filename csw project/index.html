@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        function submitAndNavigate() {
+            window.open("Online Quiz Application1.html", "_blank");
+        }
+    </script>
+<script>
+        function submitAndNavigate() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var regdNo = document.getElementById("Regd. No.").value;
+            var section = document.getElementById("Section").value;
+
+            if (name.trim() === "") {
+                alert("Please enter your name.");
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            if (regdNo.trim() === "") {
+                alert("Please enter your registration number.");
+                return;
+            }
+
+            if (section.trim() === "") {
+                alert("Please enter your section.");
+                return;
+            }
+
+            window.open("2Online Quiz Application1.html", "_blank");
+        }
+
+        function isValidEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+<style>
+        body {
+            background-color: #D3D3D3;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        h1 {
+            color: #343a40;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card shadow">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="text-center mt-5">Registration Form</h1>
+                    <form id="registrationForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Regd. No.</label>
+                            <input type="tel" class="form-control" id="Regd. No." required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Section" class="form-label">Section</label>
+                            <input type="tel" class="form-control" id="Section" required>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-primary" onclick="submitAndNavigate()">Submit & Next</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

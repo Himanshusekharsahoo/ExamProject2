@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script>
+function startQuiz() {
+    var baseUrl = "";
+    var subjectSelection = document.querySelector(".form-control").value;
+    var subjectUrl;
+
+    switch (subjectSelection) {
+        case "CSW":
+            subjectUrl = "Questionfcsw.html";
+            break;
+        case "DLD":
+            subjectUrl = "Questionfdl.html";
+            break;
+        case "PME":
+            subjectUrl = "Questionfpme.html";
+            break;
+        case "AD 1":
+            subjectUrl = "QuestionfAD.html";
+            break;
+        case "PS":
+            subjectUrl = "Questionfps.html";
+            break;
+        case "ICP":
+            subjectUrl = "QuestionsforICP.html";
+            break;
+        default:
+            subjectUrl = "DefaultQuiz.html";
+            break;
+    }
+
+    window.location.href = baseUrl + "/" + subjectUrl;
+}
+
+</script>
+    <style>
+        body {
+            background-color: #C0C0C0;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: #0078f9;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .card-body {
+            font-size: 18px;
+        }
+
+        .form-control {
+            border-radius: 8px;
+        }
+
+        .btn-primary {
+            background-color: #0078f9;
+            border-color: #0078f9;
+            border-radius: 8px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-back {
+            color: #0078f9;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card shadow">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center my-4">Online Quiz Application</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header"> Quiz Topic Selection </div>
+                            <div class="card-body">
+                                <p>Please select a quiz topic:</p>
+                                <select class="form-control">
+                                    <option value="CSW">COMPUTER SCIENCE WORKSHOP</option>
+                                    <option value="DLD">DIGITAL LOGIC DESIGN</option>
+                                    <option value="PME">PRINCIPLES OF MACROECONOMICS</option>
+                                    <option value="AD 1">ALGORITHMS DESIGN 1</option>
+                                    <option value="PS">PROBABILITY AND STATISTICS</option>
+                                    <option value="ICP">INTRODUCTION TO COMPUTER PROGRAMMING</option>
+                                </select>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary" onclick="startQuiz()">Start Quiz</button>
+                                <a href="index.html" class="btn btn-back" target="_blank">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
